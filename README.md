@@ -41,3 +41,56 @@ Follow these steps to get your local environment running:
 ### 1. Clone the Repository
 ```bash
 git clone <project url>
+cd Multi-Tier_Web_Stack_Automation
+```
+
+### 2. Provision the Infrastructure
+Navigate to the vagrant directory and bring up the 5 Virtual Machines automatically:
+
+Bash
+
+```bash
+cd vagrant
+vagrant up
+```
+
+Note: This command reads the Vagrantfile and provisions the environment in VirtualBox.
+
+### 3. Service Configuration Order
+To ensure proper connectivity, services are configured in the following sequence:
+
+- MySQL: Setup database and import schema.
+- Memcached: Initialize the caching engine.
+- RabbitMQ: Configure the message queuing agent.
+- Tomcat: Build the Java application and deploy the .war file.
+- Nginx: Configure the load balancer to point to the Tomcat instance.
+
+### 4. Verification
+Once the status is green, access the application by entering the Nginx IP address in your browser:
+
+Plaintext
+
+```text
+http://<NGINX_VM_IP>
+```
+
+##  Repository Structure
+- /vagrant: Contains the Vagrantfile (Infrastructure as Code).
+- /src: Java application source code and Maven configurations.
+- /scripts: Automated Shell scripts for middleware installation.
+
+##  Key Learning Objectives
+- IaC Mastery: Managed complex infrastructure via code rather than manual GUI clicks.
+- System Interconnectivity: Implemented communication between Java apps, DBs, and Message Brokers.
+- Troubleshooting: Developed skills in tracing errors across multi-tier distributed systems.
+- Cloud Readiness: Established a baseline for future containerization (Docker) and orchestration (K8s).
+- `/vagrant`: Vagrantfile + VM provisioning scripts
+- `/src`: Java application source, Maven POM, and web resources
+- `/scripts`: shell scripts for middleware installation and setup
+
+##  Key Learning Objectives
+- **IaC Mastery**: version-controlled infrastructure provisioning instead of manual GUI flows.
+- **System Interconnectivity**: connecting relational DB, cache, message broker, app server, and load balancer.
+- **Troubleshooting**: tracing cross-tier issues (DB, RabbitMQ, Tomcat, Nginx).
+- **Cloud Readiness**: established a local baseline for Docker/K8s migration.
+

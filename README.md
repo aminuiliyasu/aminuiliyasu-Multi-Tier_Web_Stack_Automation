@@ -26,8 +26,6 @@ The application is a distributed system where multiple services work together to
 
 Instead of manual installation, we use **Vagrant** to automate the creation and configuration of our Virtual Machines (VMs) on top of Oracle VM VirtualBox.
 
-![Vagrant Workflow](https://path-to-your-uploaded-image/workflow.png)
-
 ### Prerequisites
 Before starting, ensure you have installed:
 1.  **Oracle VM VirtualBox**: The hypervisor to run our VMs.
@@ -42,5 +40,4 @@ Follow these steps to get your local environment running:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/vprofile-project.git](https://github.com/your-username/vprofile-project.git)
-cd vprofile-project
+git clone <project url>
